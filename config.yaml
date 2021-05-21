@@ -1,0 +1,6 @@
+twitter_api:
+  bearer_key:  Write your twitter API bearer key here (*do not upload this key online)
+  
+binance_api:
+  api_key: Write your binance api key here (*do not upload this key online)
+  secret_key: Write your binance secret key here (*do not upload this key online)
