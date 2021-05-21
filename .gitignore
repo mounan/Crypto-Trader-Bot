@@ -130,7 +130,7 @@ dmypy.json
 .pyre/
 
 # keys
-config_real.yaml
+config.yaml
 
 #macos
 .DS_Store
