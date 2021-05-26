@@ -1,24 +1,37 @@
 from google.cloud import language_v1
-from time import time
-from time import sleep
 import emoji
 import yaml
 import re
 from google.oauth2 import service_account
 
 def process_yaml(path):
+    """[summary]
+
+    :param path: [description]
+    :type path: [type]
+    :return: [description]
+    :rtype: [type]
+    """    
     with open(path) as file:
         return yaml.safe_load(file)
     
-def dump_json(json_file):
+def pprint_json(json_file):
+    """[summary]
+
+    :param json_file: [description]
+    :type json_file: [type]
+    """    
     import json
     print(json.dumps(json_file, indent=2, sort_keys=True))
 
 def clean_text(text):
-    '''
-    remove urls & newlines, replace emojis to texts, remove @someone
-    
-    '''
+    """[summary]
+
+    :param text: [description]
+    :type text: [type]
+    :return: [description]
+    :rtype: [type]
+    """    
     url_pattern = r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
     at_pattern = r'@[A-Za-z0-9_-]*'
     text = re.sub(url_pattern, '', text, flags=re.S).replace('\n', ' ').replace('&amp;', 'and')
@@ -27,6 +40,15 @@ def clean_text(text):
     return text
 
 def contains_either(text, keywords):
+    """[summary]
+
+    :param text: [description]
+    :type text: [type]
+    :param keywords: [description]
+    :type keywords: [type]
+    :return: [description]
+    :rtype: [type]
+    """    
     if len(keywords) == 0: return True
     for k in keywords:
         if k.lower() in text.lower():
@@ -34,6 +56,13 @@ def contains_either(text, keywords):
     return False
 
 def pprint_dict(d, indent=0):
+    """[summary]
+
+    :param d: [description]
+    :type d: [type]
+    :param indent: [description], defaults to 0
+    :type indent: int, optional
+    """    
     for key, value in d.items():
         print('\t' * indent + str(key) + ':')
         if isinstance(value, dict):
@@ -42,12 +71,11 @@ def pprint_dict(d, indent=0):
              print('\t' * (indent+1) + str(value))
 
 def analyze_sentiment(text_content):
-    """
-    Analyzing Sentiment in a String
+    """[summary]
 
-    Args:
-      text_content The text content to analyze
-    """
+    :param text_content: [description]
+    :type text_content: [type]
+    """    
 
     google_credentials = service_account.Credentials.from_service_account_file("/Users/zmn/Downloads/sturdy-gamma-314101-8c7e836e8c75.json")
     client = language_v1.LanguageServiceClient(credentials=google_credentials)
@@ -86,12 +114,11 @@ def analyze_sentiment(text_content):
 
 
 def analyze_entity_sentiment(text_content):
-    """
-    Analyzing Entity Sentiment in a String
+    """[summary]
 
-    Args:
-      text_content The text content to analyze
-    """
+    :param text_content: [description]
+    :type text_content: [type]
+    """    
 
     google_credentials = service_account.Credentials.from_service_account_file("/Users/zmn/Downloads/sturdy-gamma-314101-8c7e836e8c75.json")
     client = language_v1.LanguageServiceClient(credentials=google_credentials)
@@ -142,3 +169,5 @@ def analyze_entity_sentiment(text_content):
     # the language specified in the request or, if not specified,
     # the automatically-detected language.
 #     print(u"Language of the text: {}".format(response.language))
+
+
