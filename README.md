@@ -142,7 +142,7 @@ Make sure you already download the whole project locally.
 
     _Looking for maintainers!_
 
-    
+  This project is for my loving babe Caroline.
 
 ## Buy Me A Coffee! ☕
 
