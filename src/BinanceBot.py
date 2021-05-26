@@ -18,9 +18,9 @@ class BinanceBot:
         self.__api_key = self.__keys['binance_api']['api_key']
         self.__base_url = 'https://api.binance.com'
         self.__headers = {'X-MBX-APIKEY': self.__api_key}
-        print("₿"*70)
-        print("|| Your Binance bot is ready. Please give orders. Hail the Bitcoin! ||")
-        print("₿"*70)
+        print('='*100)
+        print("₿ Your Binance bot is ready. Please give orders. Hail the Bitcoin! ₿")
+        print('='*100)
 
     def timestamp_str(self):
         """[summary]

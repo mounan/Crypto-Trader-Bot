@@ -22,12 +22,12 @@ class TwitterBot:
         self.__base_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
         self.__keys = process_yaml('../config.yaml')
         self.__bearer_key = self.__keys['twitter_api']['bearer_key']
-        print('='*80)
+        print('='*100)
         print(
             f"The surveillance bot for @{screen_name} is ready. This is @{screen_name}'s latest tweet: ")
         pprint_dict(self.latest_cleaned_tweet())
         print("Please give the instructions")
-        print('='*80)
+        print('='*100)
 
     def _recent_tweets(self, count=1):
         """[summary]
