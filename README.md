@@ -55,12 +55,12 @@ After all of this, the bot will keep tracking.
 
 ## Table of Contents
 
-* [src/AutoTrade.py](https://github.com/mounan/cryptobot/blob/main/src/AutoTrade.py): Central control of twitterBot and binanceBot. 
-* [src/BinanceBot.py](https://github.com/mounan/cryptobot/blob/main/src/BinanceBot.py): Encapsulation method class based on Binance API.
-* [src/TwitterBot.py](https://github.com/mounan/cryptobot/blob/main/src/TwitterBot.py): Encapsulation method class based on Twitter API. 
-* [src/main.py](https://github.com/mounan/cryptobot/blob/main/src/main.py): Launcher of the program.
-* [src/utils.py](https://github.com/mounan/cryptobot/blob/main/src/utils.py): Some global utilitiy methods. 
-* [src/Exceptions](https://github.com/mounan/cryptobot/blob/main/src/Exceptions): Some global exception classes.
+* [src/AutoTrade.py](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/AutoTrade.py): Central control of twitterBot and binanceBot. 
+* [src/BinanceBot.py](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/BinanceBot.py): Encapsulation method class based on Binance API.
+* [src/TwitterBot.py](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/TwitterBot.py): Encapsulation method class based on Twitter API. 
+* [src/main.py](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/main.py): Launcher of the program.
+* [src/utils.py](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/utils.py): Some global utilitiy methods. 
+* [src/Exceptions](https://github.com/mounan/Auto-Trader-Bot/blob/main/src/Exceptions): Some global exception classes.
 
 
 
@@ -69,7 +69,7 @@ After all of this, the bot will keep tracking.
 In your shell, ```cd``` to a proper place and type:
 
 ```shell
-git clone https://github.com/mounan/cryptobot.git
+git clone https://github.com/mounan/Auto-Trader-Bot.git
 ```
 
 
@@ -87,7 +87,7 @@ Make sure you already download the whole project locally.
     In your shell, ```cd``` to the project directory and type:
 
     ```shell
-    cd cryptobot
+    cd Auto-Trader-Bot
     pip install requirements.txt
     ```
 
@@ -162,7 +162,7 @@ BTC : ```17Kyg52xqnG53sH43sbSRezT2sWk4Aoubh```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/mounan/cryptobot/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mounan/Auto-Trader-Bot/blob/main/LICENSE) file for details.
 
 
 
