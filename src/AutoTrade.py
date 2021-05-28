@@ -108,12 +108,12 @@ class AutoTrader(TwitterBot, BinanceBot):
                         buy_price = self.get_latest_price(symbol)
                         buy_resp = self.order_request(
                             test, symbol, quantity, price=buy_price, action="BUY")
-                        pprint_json(buy_resp.json())
-                        sleep(3)
+                        sleep(1.5)
                         if buy_resp.status_code == 200:
                             sell_price = buy_price * (1+growth_rate)
                             sell_resp = self.order_request(
                                 test, symbol, quantity, price=sell_price, action="SELL")
+                            pprint_json(buy_resp.json())
                             pprint_json(sell_resp.json())
                     else:
                         print('-'*80)

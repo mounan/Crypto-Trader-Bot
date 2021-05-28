@@ -60,7 +60,7 @@ class BinanceBot:
         round_size = self.get_round_size(symbol)
         if not price:
             price = self.get_latest_price(symbol)
-        price = round(price, round_size)
+        price = f'{price:.{round_size}f}'
         post_par = f'symbol={symbol}&side={action}&quantity={quantity}&type=LIMIT&timeInForce=GTC&price={price}&recvWindow=1000&newOrderRespType=RESULT'
         ts = self.timestamp_str()
         post_par_with_ts = post_par+'&timestamp='+ts
