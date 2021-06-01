@@ -8,7 +8,7 @@ from pprint import pformat
 
 def __main__():
     os.system('clear')
-    logging.basicConfig(filename=f'logs/{datetime.now().strftime("%Y%m%d-%H%M%S")}.log', level=logging.INFO,
+    logging.basicConfig(filename=f'/Users/zmn/Library/Mobile Documents/com~apple~CloudDocs/bot-logs/{datetime.now().strftime("%Y%m%d-%H%M%S")}.log', level=logging.INFO,
                         format='%(levelname)s: %(asctime)s \n%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
     test_str = input(
         "[ Wanna test mode first ? (Test mode will never trigger the real order in Binance) [yes/no] ]: ")
