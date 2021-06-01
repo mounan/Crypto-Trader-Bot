@@ -135,3 +135,4 @@ config.yaml
 #macos
 .DS_Store
 .vscode/settings.json
+src/test.py
