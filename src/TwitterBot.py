@@ -1,3 +1,5 @@
+from logging import log
+import logging
 from Exceptions import *
 from time import *
 from datetime import datetime
@@ -69,14 +71,15 @@ class TwitterBot:
                 else:
                     raise NoNewException
             else:
-                print(
-                    f"Function '{inspect.currentframe().f_code.co_name}' requests failed, requesting agian.")
+                print(f"Function '{inspect.currentframe().f_code.co_name}' requests failed, requesting agian.")
+                logging.error(f"Function '{inspect.currentframe().f_code.co_name}' requests failed, requesting agian.\n")
                 return self._latest_tweet()
         elif self.__since_id == 0:
             try:
                 latest_tweet = self._recent_tweets(count=1)[0]
             except Exception as e:
                 print(e)
+                logging.error(e+"\n")
                 return self._latest_tweet()
             else:
                 self.__since_id = latest_tweet['id']

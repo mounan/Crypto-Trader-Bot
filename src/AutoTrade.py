@@ -1,7 +1,9 @@
+from pprint import pformat
 from TwitterBot import TwitterBot
 from utils import *
 from BinanceBot import BinanceBot
 from time import *
+import logging
 
 
 class AutoTrader(TwitterBot, BinanceBot):
@@ -104,7 +106,7 @@ class AutoTrader(TwitterBot, BinanceBot):
                     if contains_either(text, keywords):
                         print('-'*80)
                         print('Ordered by this tweet:')
-                        print('Text: '+clean_text(text))
+                        print('Tweet: '+clean_text(text))
                         buy_price = self.get_latest_price(symbol)
                         buy_resp = self.order_request(
                             test, symbol, quantity, price=buy_price, action="BUY")
@@ -113,13 +115,18 @@ class AutoTrader(TwitterBot, BinanceBot):
                             sell_price = buy_price * (1+growth_rate)
                             sell_resp = self.order_request(
                                 test, symbol, quantity, price=sell_price, action="SELL")
+                            logging.warning("Ordered by this tweet:\n"+'Tweet: '+clean_text(text))
+                            logging.info(pformat(buy_resp.json()))
+                            logging.info(pformat(sell_resp.json()) + '\n')
                             pprint_json(buy_resp.json())
                             pprint_json(sell_resp.json())
                     else:
                         print('-'*80)
-                        print('Text: '+clean_text(text))
+                        print('Tweet: '+clean_text(text))
+                        logging.warning("Couldn't find any keywords in this tweet\n" + 'Tweet: '+clean_text(text) + '\n')
                         print("## Couldn't find any keywords in this tweet ##")
                         print('-'*80)
         except: 
             print("")
             print("[ Program terminated. ]")
+            logging.info("[ Program terminated. ]")
